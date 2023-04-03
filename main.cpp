@@ -1,7 +1,7 @@
-#include "applications.h"
+#include "application.h"
 
 int main() {
-  TApplications app;
+  TApplication app;
 
   return app.exec();
 }
