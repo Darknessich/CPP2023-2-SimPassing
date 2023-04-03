@@ -12,4 +12,4 @@ The following task is implemented within the application:
 
 >The teacher can publish the progress table.
 
-![Сlass diagram](https://github.com/Darknessich/CPP2023-2-SimPassing/blob/main/Сlass%20diagram.png)
+![Сlass diagram](https://github.com/Darknessich/CPP2023-2-SimPassing/blob/main/СlassDiagram.png)
