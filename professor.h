@@ -28,7 +28,7 @@ public:
   /// getting a response to the queue 
   void getAnswer(Answer const& ans);
 
-  /// ñhecking all responses received and compilation of a student grade table
+  /// checking all responses received and compilation of a student grade table
   void checkAllAnswers();
 
   /// print of a student grade table
