@@ -1,17 +1,27 @@
 #include "professor.h"
 
-void TProfessor::getAnswer(Answer const& ans) {
-  this->mail.push(ans);
-}
+TAnswer::TAnswer()
+  : flag(ERootsFlag::RF_NO_ROOTS), roots({ 0, 0 }), poly(0, 0, 0), name("")
+{}
 
-bool checkRoots(Answer const& ans, std::array<double, 2> const& _roots) {
-  switch (ans.flag) {
+TAnswer::TAnswer(ERootsFlag flag, std::array<double, 2> roots, TQuadPoly poly, std::string name)
+  : flag(flag), roots(roots), poly(poly), name(name)
+{}
+
+bool TAnswer::isCorrect() const {
+  std::array<double, 2> correctRoots;
+  ERootsFlag correctFlag = this->poly.solve(correctRoots);
+
+  if (this->flag != correctFlag)
+    return false;
+
+  switch (this->flag) {
   case ERootsFlag::RF_NO_ROOTS:
     return true;
   case ERootsFlag::RF_ONE_ROOT:
-    return ans.roots.at(0) == _roots.at(0);
+    return this->roots.at(0) == correctRoots.at(0);
   case ERootsFlag::RF_TWO_ROOTS:
-    return ans.roots.at(0) == _roots.at(0) && ans.roots.at(1) == _roots.at(1);
+    return this->roots.at(0) == correctRoots.at(0) && this->roots.at(1) == correctRoots.at(1);
   case ERootsFlag::RF_INF_ROOTS:
     return true;
   default:
@@ -19,20 +29,15 @@ bool checkRoots(Answer const& ans, std::array<double, 2> const& _roots) {
   }
 }
 
-bool checkAnswer(Answer const& ans) {
-  std::array<double, 2> roots;
-  ERootsFlag flag = ans.poly.solve(roots);
-
-  if (flag == ans.flag && checkRoots(ans, roots))
-    return true;
-  return false;
+void TProfessor::getAnswer(TAnswer const& ans) {
+  this->mail.push(ans);
 }
 
 void TProfessor::checkAllAnswers() {
-  Answer ans(ERootsFlag::RF_NO_ROOTS, {0, 0}, TQuadPoly(0, 0, 0), "");
+  TAnswer ans;
   while (!mail.empty()) {
     ans = mail.front();
-    table[ans.name] += static_cast<int>(checkAnswer(ans));
+    table[ans.name] += static_cast<int>(ans.isCorrect());
     mail.pop();
   }
 }

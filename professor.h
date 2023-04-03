@@ -8,25 +8,31 @@
 #include <iostream>
 
 /// the structure of the student's response given by the teacher
-struct Answer {
+struct TAnswer {
   ERootsFlag flag; ///< the number of roots of the solution
   std::array<double, 2> roots; ///< roots found
   TQuadPoly poly; ///< given polynomial
   std::string name; ///< student name
 
-  Answer(ERootsFlag flag, std::array<double, 2> roots, TQuadPoly poly, std::string name)
-    : flag(flag), roots(roots), poly(poly), name(name)
-  {}
+  TAnswer();
+  TAnswer(ERootsFlag flag, std::array<double, 2> roots, TQuadPoly poly, std::string name);
+
+  /**
+  * Checks the student's answer for correctness
+  * 
+  * \return true if the answer is correct and false otherwise
+  */
+  bool isCorrect() const;
 };
 
 class TProfessor {
 private:
-  std::queue<Answer> mail; ///< a queue consisting of student responses
+  std::queue<TAnswer> mail; ///< a queue consisting of student responses
   std::map<std::string, int> table; ///< students grade table
 
 public:
   /// getting a response to the queue 
-  void getAnswer(Answer const& ans);
+  void getAnswer(TAnswer const& ans);
 
   /// checking all responses received and compilation of a student grade table
   void checkAllAnswers();

@@ -7,7 +7,7 @@
 *
 * > There are tasks - quadratic equations written in the input file. Students
 * > solve them and send the answers to the teacher. The teacher has a queue of
-* > letters for verification in the format â€œsquare equation + solution + student nameâ€.
+* > letters for verification in the format “square equation + solution + student name”.
 * 
 * > Students are good - they always solve problems correctly, average - they 
 * > have a chance to solve the problem correctly, but they can make mistakes,
@@ -18,6 +18,7 @@
 * > problems in the table. 
 *
 * > The teacher can publish the progress table.
+* 
 */
 class TApplication
 {

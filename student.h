@@ -21,7 +21,7 @@ private:
   * \param [in] poly a given quadratic polynomial 
   * \return student response
   */
-  virtual Answer giveAnswer(TQuadPoly const& poly) const = 0;
+  virtual TAnswer giveAnswer(TQuadPoly const& poly) const = 0;
 
 public:
   TStudent(std::string name);
@@ -41,7 +41,7 @@ public:
 class TBadStudent : public TStudent {
 private:
   /// the student's answer is always one root: {0}
-  Answer giveAnswer(TQuadPoly const& _poly) const;
+  TAnswer giveAnswer(TQuadPoly const& _poly) const;
 
 public:
   TBadStudent(std::string name) : TStudent(name) {};
@@ -50,7 +50,7 @@ public:
 class TNormStudent : public TStudent {
 private:
   /// the student's answer is sometimes not correct
-  Answer giveAnswer(TQuadPoly const& _poly) const;
+  TAnswer giveAnswer(TQuadPoly const& _poly) const;
 
 public:
   TNormStudent(std::string name) : TStudent(name) {};
@@ -59,7 +59,7 @@ public:
 class TGoodStudent : public TStudent {
 private:
   /// the student's answer is always correct
-  Answer giveAnswer(TQuadPoly const& _poly) const;
+  TAnswer giveAnswer(TQuadPoly const& _poly) const;
 
 public:
   TGoodStudent(std::string name) : TStudent(name) {};
