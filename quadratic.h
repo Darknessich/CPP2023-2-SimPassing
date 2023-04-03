@@ -32,11 +32,4 @@ public:
   * \return value denoting the number of roots
   */
   ERootsFlag solve(std::array<double, 2> &roots) const;
-  
-  /**
-  * method for getting polynomial coefficient values ​​from outside
-  * 
-  * \return array of three polynomial coefficient values: {a, b, c}
-  */
-  std::array<double, 3> get() const;
 };
