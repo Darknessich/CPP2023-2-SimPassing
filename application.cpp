@@ -156,7 +156,7 @@ void TakeAction(
   }
 }
 
-int TApplications::exec() {
+int TApplication::exec() {
   TProfessor prof;
   std::list<TStudent*> stList;
   std::list<TQuadPoly> polyList;
