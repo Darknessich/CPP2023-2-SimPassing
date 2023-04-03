@@ -40,7 +40,3 @@ ERootsFlag TQuadPoly::solve(std::array<double, 2>& _roots) const {
 
   return result;
 }
-
-std::array<double, 3> TQuadPoly::get() const {
-  return { a, b, c };
-}
