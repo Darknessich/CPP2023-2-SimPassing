@@ -1,4 +1,4 @@
-#include "applications.h"
+#include "application.h"
 #include "quadratic.h"
 #include "professor.h"
 #include "student.h"
