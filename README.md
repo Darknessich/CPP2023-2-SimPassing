@@ -11,3 +11,5 @@ The following task is implemented within the application:
 > The teacher can check all the letters from the queue after the credit weeks and write down the name of the student and the number of successfully solved problems in the table. 
 
 >The teacher can publish the progress table.
+
+![Сlass diagram](https://github.com/Darknessich/CPP2023-2-SimPassing/blob/main/Сlass%20diagram.png)
