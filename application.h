@@ -19,7 +19,7 @@
 *
 * > The teacher can publish the progress table.
 */
-class TApplications
+class TApplication
 {
 public:
   int exec();
