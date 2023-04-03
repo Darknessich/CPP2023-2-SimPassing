@@ -17,7 +17,7 @@
 * > and write down the name of the student and the number of successfully solved
 * > problems in the table. 
 *
-* > The teacher can publish the progress table.* 
+* > The teacher can publish the progress table.
 */
 class TApplications
 {
